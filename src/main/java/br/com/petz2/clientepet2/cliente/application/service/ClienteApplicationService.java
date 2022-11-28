@@ -1,7 +1,10 @@
 package br.com.petz2.clientepet2.cliente.application.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import br.com.petz2.clientepet2.cliente.application.API.ClienteListResponse;
 import br.com.petz2.clientepet2.cliente.application.API.ClienteRequest;
 import br.com.petz2.clientepet2.cliente.application.API.ClienteResponse;
 import br.com.petz2.clientepet2.cliente.application.repository.ClienteRepository;
@@ -24,6 +27,13 @@ public class ClienteApplicationService implements ClienteService {
 		return ClienteResponse.builder()
 				.idCliente(cliente.getIdCliente())
 				.build();
+	}
+
+	@Override
+	public List<ClienteListResponse> buscaTodosClientes() {
+		log.info("[inicia] ClienteApplicationService - buscaTodosClientes");
+		log.info("[finaliza] ClienteApplicationService - buscaTodosClientes");
+		return null;
 	}
 
 }
