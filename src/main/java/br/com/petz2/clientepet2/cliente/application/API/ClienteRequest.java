@@ -28,10 +28,10 @@ public class ClienteRequest {
 	@CPF
 	private String cpf;
 	@NotNull
-	private boolean aceitaTermos;
-	public @NotNull boolean getAceitaTermos() {
-		return true;
-	}
+	private Boolean aceitaTermos;
+//	public @NotNull boolean getAceitaTermos() {
+//		return true;
+	
 }
 
 

@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import javax.validation.constraints.NotBlank;
-
 import br.com.petz2.clientepet2.cliente.domain.Cliente;
 import lombok.Value;
 
@@ -13,7 +11,6 @@ import lombok.Value;
 public class ClienteListResponse {
 	
 	private UUID idCliente;
-	@NotBlank
 	private String nomeCompleto;
 	private String cpf;
 	private String email;

@@ -1,6 +1,7 @@
 package br.com.petz2.clientepet2.cliente.application.API;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ import lombok.extern.log4j.Log4j2;
 @RequiredArgsConstructor
 public class ClienteController implements ClienteAPI {
 
+	private static final ClienteDetalhadoResponse ClienteDetalhado = null;
 	private final ClienteService clienteService;
 
 	@Override
@@ -29,6 +31,15 @@ public class ClienteController implements ClienteAPI {
 		List<ClienteListResponse> Clientes = clienteService.buscaTodosClientes();
 		log.info("[finaliza] ClienteController - getTodosClientes");
 		return Clientes;
+	}
+
+	@Override
+	public ClienteDetalhadoResponse getClienteAtravesId(UUID idCliente) {
+		log.info("[inicia] ClienteController - getClienteAtravesId");
+		log.info("[idCliente] {}", idCliente);
+		ClienteDetalhadoResponse clienteDetalhado = clienteService.buscaClienteAtravesId(idCliente);
+		log.info("[finaliza] ClienteController - getClienteAtravesId");
+		return ClienteDetalhado;
 	}
 
 }
