@@ -13,8 +13,6 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @RequiredArgsConstructor
 public class ClienteController implements ClienteAPI {
-
-	private static final ClienteDetalhadoResponse ClienteDetalhado = null;
 	private final ClienteService clienteService;
 
 	@Override
@@ -39,7 +37,6 @@ public class ClienteController implements ClienteAPI {
 		log.info("[idCliente] {}", idCliente);
 		ClienteDetalhadoResponse clienteDetalhado = clienteService.buscaClienteAtravesId(idCliente);
 		log.info("[finaliza] ClienteController - getClienteAtravesId");
-		return ClienteDetalhado;
+		return clienteDetalhado;
 	}
-
 }

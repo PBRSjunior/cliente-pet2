@@ -27,7 +27,7 @@ import lombok.NoArgsConstructor;
 
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
-		@Column(columnDefinition = "uuid", name = "id", updatable = false, unique = true, nullable = false)
+		@Column(columnDefinition = "uuid", name = "idCliente", updatable = false, unique = true, nullable = false)
 		private UUID idCliente;
 		@NotBlank
 		private String nomeCompleto;

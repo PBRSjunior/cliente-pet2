@@ -14,23 +14,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("/v1/cliente")
 public interface ClienteAPI {
 
-		@PostMapping
-		@ResponseStatus(code = HttpStatus.CREATED)
-		ClienteResponse postCliente(@Valid @RequestBody ClienteRequest clienteRequest);
-	
-		@GetMapping
-		@ResponseStatus(code = HttpStatus.OK)
-		List<ClienteListResponse> getTodosCliente();
-		
-		@GetMapping(value = "/{idCliente}")
-		@ResponseStatus(code = HttpStatus.OK)
-		ClienteDetalhadoResponse getClienteAtravesId(@PathVariable UUID idCliente);
-	
-	
+	@PostMapping
+	@ResponseStatus(code = HttpStatus.CREATED)
+	ClienteResponse postCliente(@Valid @RequestBody ClienteRequest clienteRequest);
+
+	@GetMapping
+	@ResponseStatus(code = HttpStatus.OK)
+	List<ClienteListResponse> getTodosCliente();
+
+	@GetMapping(value = "/{idCliente}")
+	@ResponseStatus(code = HttpStatus.OK)
+	ClienteDetalhadoResponse getClienteAtravesId(@PathVariable UUID idCliente);
 
 }
